@@ -185,7 +185,7 @@ app = BedrockAgentCoreApp()
 S3_BUCKET = os.environ.get("DATA_BUCKET", "agent-eval-data-dev-ACCOUNT_ID-REGION")
 LANCEDB_KEY = os.environ.get("LANCEDB_PATH", "lancedb/latest.json")
 AWS_REGION = os.environ.get("AWS_REGION", os.environ.get("REGION", "eu-west-1"))
-MODEL_ID = os.environ.get("MODEL_ID", "eu.anthropic.claude-sonnet-4-6")
+MODEL_ID = os.environ.get("MODEL_ID", "amazon.nova-pro-v1:0")
 # Upper bound on caller-supplied prompt length. Bounds Bedrock token cost per
 # request and limits the surface for oversized prompt-injection payloads. Tunable
 # via env without a redeploy of the image's defaults.

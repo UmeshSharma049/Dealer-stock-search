@@ -65,7 +65,7 @@ async def generate_cases_async(
     if model is None:
         cfg = load_config()
         model = cfg.judge_model or os.environ.get(
-            "JUDGE_MODEL_ID", "eu.anthropic.claude-sonnet-4-6"
+            "JUDGE_MODEL_ID", "amazon.nova-pro-v1:0"
         )
 
     generator = ExperimentGenerator(

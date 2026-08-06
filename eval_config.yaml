@@ -20,7 +20,7 @@ project:
   environment: "dev"
 
 # --- Judge model for LLM-based evaluators ---
-judge_model: "eu.anthropic.claude-sonnet-4-6"
+judge_model: "amazon.nova-pro-v1:0"
 
 # --- Agent tools ---
 # List every tool your agent can call. Used by TrajectoryEvaluator.

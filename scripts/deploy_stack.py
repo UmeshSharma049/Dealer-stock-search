@@ -85,7 +85,8 @@ def _build_image(region: str, ecr_repo: str, image_tag: str) -> str:
 
 
 def _cdk_deploy(image_uri: str, region: str, env_name: str) -> None:
-    if shutil.which("cdk") is None:
+    cdk_path = shutil.which("cdk")
+    if cdk_path is None:
         raise RuntimeError("cdk CLI not found on PATH. Install with: npm install -g aws-cdk")
     account = boto3.Session(region_name=region).client("sts").get_caller_identity()["Account"]
     env = {
@@ -97,7 +98,7 @@ def _cdk_deploy(image_uri: str, region: str, env_name: str) -> None:
     }
     _run(
         [
-            "cdk",
+            cdk_path,
             "deploy",
             "--all",
             "--require-approval",

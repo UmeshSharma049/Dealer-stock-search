@@ -131,7 +131,7 @@ BUILD_TIMEOUT_SECONDS = 1800
 # Amazon Titan embedding model) and with the Bedrock policy in
 # cdk/lib/agent_runtime_stack.py so the runtime role grants least-privilege
 # Amazon Bedrock access scoped to exactly these models, not Resource "*".
-DEFAULT_MODEL_ID = "eu.anthropic.claude-sonnet-4-6"
+DEFAULT_MODEL_ID = "amazon.nova-pro-v1:0"
 EMBEDDING_MODEL_ID = "amazon.titan-embed-text-v2:0"
 
 # Cross-region inference-profile IDs are prefixed with the geo (eu./us./apac.).
@@ -143,7 +143,7 @@ _INFERENCE_PROFILE_PREFIXES = ("eu.", "us.", "apac.", "us-gov.")
 def _base_model_id(model_id: str) -> str:
     """Strip a cross-region inference-profile geo prefix to the foundation model.
 
-    ``eu.anthropic.claude-sonnet-4-6`` -> ``anthropic.claude-sonnet-4-6``. A
+    ``us.amazon.nova-pro-v1:0`` -> ``anthropic.claude-sonnet-4-6``. A
     plain foundation-model ID (no recognised prefix) is returned unchanged.
     """
     for prefix in _INFERENCE_PROFILE_PREFIXES:

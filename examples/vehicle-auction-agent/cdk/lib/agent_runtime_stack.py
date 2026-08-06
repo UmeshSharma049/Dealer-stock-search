@@ -299,10 +299,9 @@ class AgentRuntimeStack(Stack):
                 # AWS does not expose which EU region a cross-region inference profile routes to,
                 # so eu-* is the tightest possible scope.
                 resources=[
-                    f"arn:aws:bedrock:{self.region}:{self.account}"
-                    ":inference-profile/eu.anthropic.claude-sonnet-4-6",
-                    "arn:aws:bedrock:eu-*::foundation-model/anthropic.claude-sonnet-4-6",
-                    "arn:aws:bedrock:eu-*::foundation-model/amazon.titan-embed-text-v2:0",
+                    f"arn:aws:bedrock:{self.region}::foundation-model/amazon.nova-pro-v1:0",
+                    f"arn:aws:bedrock:{self.region}::foundation-model/anthropic.claude-sonnet-4-6",
+                    f"arn:aws:bedrock:{self.region}::foundation-model/amazon.titan-embed-text-v2:0",
                 ],
             )
         )
